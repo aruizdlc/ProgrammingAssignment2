@@ -31,18 +31,6 @@ cacheSolve <- function(x, ...) {
     return(i)
   }
   data <- x$get()
-  # Check if the matrix is square
-  if(nrow(data) != ncol(data)) {
-    message("matrix must be square")
-    i <- matrix()
-    return(i)
-  }
-  # Check if the matrix is singular
-  if(det(data) == 0) {
-    message("matrix must be not-singular")
-    i <- matrix()
-    return(i)
-  }
   # Calculates inverse 
   i <- solve(data, ...)
   # Sets the value of the inverse in the cache via
